@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <span>total : 0</span>
+        <button id="btn">click</button>
+    </body>
+    <script>
+        let cnt = 0;
+        const button = document.getElementById("btn")
+        const span = document.querySelector("span")
+        function handleClick() {
+            cnt = cnt + 1;
+            span.innerText = 'total : ' + cnt
+        }
+        button.addEventListener("click", handleClick)
+    </script>
+</html>
