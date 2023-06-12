@@ -2,30 +2,30 @@
     <body>
         <div id="root"></div>
     </body>
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script
+        crossorigin
+        src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+        crossorigin
+        src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
         const root = document.getElementById("root");
-        const Title = () => (
-            <h3 id="title" onMouseEnter={() => console.log("click")}>
-                Hello
-            </h3>
-        )
-        const Button = () => (    
-            <button style={{
-                backgroundColor: "tomato",
-            }}
-            onClick={() => console.log("clicked")}>
-                Click me
-            </button>
-        )
-        const Container = () => (
-            <div>
-                <Title />
-                <Button />
-            </div>
-        );
-        ReactDOM.render(<Container />, root)
+        function App() {
+            const [counter, setCounter] = React.useState(0);
+            const onClick = () => {
+                // setCounter(counter + 1);
+                setCounter((current) => current + 1);
+            };
+            return (
+                <div>
+                    <h3>total : {counter}</h3>
+                    <button onClick={onClick}>Click me</button>
+                </div>
+            );
+        }
+        ReactDOM.render(<App />, root);
     </script>
 </html>
